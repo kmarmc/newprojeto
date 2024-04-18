@@ -20,6 +20,8 @@
     <Image Source="soldia.jpg"
          Grid.ColumnSpan="3"
          Grid.RowSpan="4"/>
+         
+        
 
     <Frame x:Name="tempo"
            BackgroundColor="#F0F0F0"
@@ -29,10 +31,11 @@
            Grid.Column="0"
             Grid.Row="1"
            Grid.RowSpan="2">
+       
    </Frame> 
 
     <Frame x:Name="sol"
-           BackgroundColor="#60d0d0d0"
+           BackgroundColor="#F0F0F0"
            Padding="15"
            HeightRequest="70"
            CornerRadius="25"
@@ -41,7 +44,7 @@
     </Frame> 
 
     <Frame x:Name="chuva"
-           BackgroundColor="#60d0d0d0"
+           BackgroundColor="#F0F0F0"
            Padding="15"
            HeightRequest="70"
            CornerRadius="25"
@@ -50,7 +53,7 @@
     </Frame> 
 
     <Frame x:Name="vento"
-           BackgroundColor="#60d0d0d0"
+           BackgroundColor="#F0F0F0"
            Padding="15"
            HeightRequest="70"
            CornerRadius="25"
@@ -59,7 +62,7 @@
     </Frame> 
 
     <Frame x:Name="lua"
-           BackgroundColor="#60d0d0d0"
+           BackgroundColor="#F0F0F0"
            Padding="15"
            HeightRequest="70"
            CornerRadius="25"
@@ -68,7 +71,7 @@
     </Frame> 
     
     <Frame x:Name="espaço"
-           BackgroundColor="#54d0d0d0"
+           BackgroundColor="#F0F0F0"
            Padding="15"
            HeightRequest="125"
            CornerRadius="30"

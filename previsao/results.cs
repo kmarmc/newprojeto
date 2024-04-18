@@ -2,7 +2,7 @@ namespace previsao;
 
 public class results
 {
-     public int temp {get; set;}
+  public int temp {get; set;}
 
    public string description {get; set;}
 
@@ -28,4 +28,5 @@ public class results
 
    public string moon_phase {get; set;}
 
+  
 }
