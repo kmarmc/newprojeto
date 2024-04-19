@@ -17,7 +17,7 @@
         <ColumnDefinition Width="*"/>
     </Grid.ColumnDefinitions>
 
-    <Image Source="soldia.jpg"
+    <Image x:Name="imgfundo"
          Grid.ColumnSpan="3"
          Grid.RowSpan="4"/>
          
@@ -31,17 +31,27 @@
            Grid.Column="0"
             Grid.Row="1"
            Grid.RowSpan="2">
+
+       <Grid.RowDefinitions>
+              <RowDefinition Height="150"/>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="*"/>
+       </Grid.RowDefinitions>
+
+       <label x:Name="labelgrau"
+              Grid.Row="0"
+              FonteSize="40"
+              HorizontalOptions="Center"/>
+       <label x:Name="labelnuvem"
+              Grid.Row="1"
+              FonteSize="15"
+              HorizontalOptions="Center"/>
+       <label x:Name="labelcidade"
+              Grid.Row="2"
+              FonteSize="20"
+              HorizontalOptions="Center"/>             
        
    </Frame> 
-
-    <Frame x:Name="sol"
-           BackgroundColor="#F0F0F0"
-           Padding="15"
-           HeightRequest="70"
-           CornerRadius="25"
-           Grid.Column="1"
-           Grid.Row="1">
-    </Frame> 
 
     <Frame x:Name="chuva"
            BackgroundColor="#F0F0F0"
@@ -49,7 +59,44 @@
            HeightRequest="70"
            CornerRadius="25"
            Grid.Column="1"
+           Grid.Row="1">
+
+          <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+       <label x:Name="labelchuva"
+              Grid.Row="0"
+              FonteSize="20"
+              HorizontalOptions="Center"/>
+       <label x:Name="labelumidade"
+              Grid.Row="1"
+              FonteSize="20"
+              HorizontalOptions="Center"/>
+
+
+    </Frame> 
+
+    <Frame x:Name="sol"
+           BackgroundColor="#F0F0F0"
+           Padding="15"
+           HeightRequest="70"
+           CornerRadius="25"
+           Grid.Column="1"
            Grid.Row="2">
+          <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+       <label x:Name="labelamanhecer"
+              Grid.Row="1"
+              FonteSize="20"
+              HorizontalOptions="Center"/>
+       <label x:Name="labelanoitecer"
+              Grid.Row="2"
+              FonteSize="20"
+              HorizontalOptions="Center"/>
     </Frame> 
 
     <Frame x:Name="vento"
@@ -59,6 +106,20 @@
            CornerRadius="25"
            Grid.Column="2"
            Grid.Row="1">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+       <label x:Name="labelforça"
+              Grid.Row="1"
+              FonteSize="20"
+              HorizontalOptions="Center"/>
+       <label x:Name="labeldirecao"
+              Grid.Row="2"
+              FonteSize="20"
+              HorizontalOptions="Center"/>
+           
     </Frame> 
 
     <Frame x:Name="lua"
@@ -68,6 +129,25 @@
            CornerRadius="25"
            Grid.Column="2"
            Grid.Row="2">
+             <Grid.RowDefinitions>
+              <RowDefinition Height="*"/>
+              <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+           <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
+          <label x:Name="labellua"
+              Grid.Row="1"
+              Grid.Column="0"
+              FonteSize="20"
+              HorizontalOptions="Center"/>
+           <label x:Name="labellua"
+              Grid.Row="1"
+              Grid.Column="0"
+              FonteSize="20"
+              HorizontalOptions="Center"/>
     </Frame> 
     
     <Frame x:Name="espaço"
