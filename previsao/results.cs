@@ -1,6 +1,6 @@
 namespace previsao;
 
-public class results
+public class Results
 {
   public int temp {get; set;}
 

@@ -1,58 +1,71 @@
-﻿using System.Reflection.Emit;
+﻿using System.Text.Json;
 
 namespace previsao;
 
 public partial class MainPage : ContentPage
 {
+	const string url="https://api.hgbrasil.com/weather7a18584f";
+	Resposta resposta;
 	public MainPage()
 	{
 		InitializeComponent();
 		TestaClima();
-		PreencherTela();
 	}
-	results conclusão=new results();
-	void TestaClima()
+	async void AtualizaTempo()
 	{
-		conclusão.temp=20;
-	}
-void PreencherTela()
-{
-	labelgrau.Text=conclusão.temp.ToString();
-	labelcidade.Text=conclusão.city;
-	labelnuvem.Text=conclusão.description;
-	Labelcondition_code.Text=conclusão.condition_code;
-	Labelcurrently.Text=conclusão.currently;
-	Labelimg_id.Text=conclusão.img_id;
-	labelumidade.Text=conclusão.humidity.ToString();
-	labelchuva.Text=conclusão.rain.ToString();
-	labelamanhecer.Text=conclusão.sunrise;
-	labelanoitecer.Text=conclusão.sunset;
-	labelforça=conclusão.wind_speedy;
-	labeldirecao=conclusão.wind_direction.ToString();
-	Labelwind_cardinal=conclusão.wind_cardinal;
-	labellua=conclusão.moon_phase;
-	Labelcloudiness=conclusão.cloudiness.ToString();
+		try
+		{
+			var navegador = new HttpClient();
+			var response = await navegador.GetAsync(url);
+			if (response.IsSucessStatusCode)
+			{
+				var content = await response.Content.ReadAsStringAsync();
+				resposta = JsonSerializer.Deserialize<Resposta>(content);
+			}	
+			PreencherTela();
+		}
+		catch(Exception e)
+		{
 
-	
-	if (conclusão.currently == "dia")
-	{
-		if (conclusão.rain>= 8)
-		imgfundo.Source ="diachuva.jpg";
-		else if (conclusão.cloudiness>=8)
-		imgfundo.Source ="nubladodia.jpg";
-		else
-		imgfundo.Source ="soldia.jpg";
+		}
 	}
-	else
+	void PreencherTela()
 	{
-		if (conclusão.rain >= 8)
-		imgfundo.Source ="raios.jpg";
-		else if (conclusão.cloudiness>=8)
-		imgfundo.Source ="nublado.jpg";
-		else
-		imgfundo.Source ="estrela.jpg";
-	}
-}
+		labelgrau.Text=resposta.results.temp.ToString();
+		labelcidade.Text=resposta.results.city;
+		labelnuvem.Text=resposta.results.description;
+		Labelcondition_code.Text=resposta.results.condition_code;
+		Labelcurrently.Text=resposta.results.currently;
+		Labelimg_id.Text=resposta.results.img_id;
+		labelumidade.Text=resposta.results.humidity.ToString();
+		labelchuva.Text=resposta.results.rain.ToString();
+		labelamanhecer.Text=resposta.results.sunrise;
+		labelanoitecer.Text=resposta.results.sunset;
+		labelforça=resposta.results.wind_speedy;
+		labeldirecao=resposta.results.wind_direction.ToString();
+		Labelwind_cardinal=resposta.results.wind_cardinal;
+		labellua=resposta.results.moon_phase;
+		Labelcloudiness=resposta.results.cloudiness.ToString();
 
+		
+		if (conclusão.currently == "dia")
+		{
+			if (conclusão.rain>= 8)
+			imgfundo.Source ="diachuva.jpg";
+			else if (conclusão.cloudiness>=8)
+			imgfundo.Source ="nubladodia.jpg";
+			else
+			imgfundo.Source ="soldia.jpg";
+		}
+		else
+		{
+			if (conclusão.rain >= 8)
+			imgfundo.Source ="raios.jpg";
+			else if (conclusão.cloudiness>=8)
+			imgfundo.Source ="nublado.jpg";
+			else
+			imgfundo.Source ="estrela.jpg";
+		}
+	}
 }
 
