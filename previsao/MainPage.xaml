@@ -93,11 +93,11 @@
           </Grid.RowDefinitions>
        <Label x:Name="labelamanhecer"
               Grid.Row="1"
-              FontSize="20"
+              FontSize="12"
               HorizontalOptions="Center"/>
        <Label x:Name="labelanoitecer"
               Grid.Row="2"
-              FontSize="20"
+              FontSize="12"
               HorizontalOptions="Center"/>
        </Grid>
     </Frame> 

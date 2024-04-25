@@ -4,7 +4,7 @@ namespace previsao;
 
 public partial class MainPage : ContentPage
 {
-	const string url="https://api.hgbrasil.com/weather?woeid=7a18584f";
+	const string url="https://api.hgbrasil.com/weather?woeid=455927&key=7a18584f";
 	Resposta resposta;
 	public MainPage()
 	{
