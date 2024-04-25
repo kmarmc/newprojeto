@@ -23,9 +23,9 @@
          
         
 
-    <Frame x:Name="tempo"
+    <Frame 
            BackgroundColor="#F0F0F0"
-           Padding="15"
+           Padding="5"
            HeightRequest="150"
            CornerRadius="35"
            Grid.Column="0"
@@ -40,22 +40,22 @@
 
        <Label x:Name="labelgrau"
               Grid.Row="0"
-              FonteSize="40"
+              FontSize="38"
               HorizontalOptions="Center"/>
        <Label x:Name="labelnuvem"
               Grid.Row="1"
-              FonteSize="15"
+              FontSize="19"
               HorizontalOptions="Center"/>
        <Label x:Name="labelcidade"
               Grid.Row="2"
-              FonteSize="20"
+              FontSize="19"
               HorizontalOptions="Center"/>             
        </Grid>
        </Frame> 
 
-    <Frame x:Name="chuva"
+    <Frame 
            BackgroundColor="#F0F0F0"
-           Padding="15"
+           Padding="5"
            HeightRequest="70"
            CornerRadius="25"
            Grid.Column="1"
@@ -67,19 +67,19 @@
           </Grid.RowDefinitions>
        <Label x:Name="labelchuva"
               Grid.Row="0"
-              FonteSize="20"
+              FontSize="20"
               HorizontalOptions="Center"/>
        <Label x:Name="labelumidade"
               Grid.Row="1"
-              FonteSize="20"
+              FontSize="20"
               HorizontalOptions="Center"/>
 
        </Grid>
     </Frame> 
 
-    <Frame x:Name="sol"
+    <Frame 
            BackgroundColor="#F0F0F0"
-           Padding="15"
+           Padding="5"
            HeightRequest="70"
            CornerRadius="25"
            Grid.Column="1"
@@ -93,18 +93,18 @@
           </Grid.RowDefinitions>
        <Label x:Name="labelamanhecer"
               Grid.Row="1"
-              FonteSize="20"
+              FontSize="20"
               HorizontalOptions="Center"/>
        <Label x:Name="labelanoitecer"
               Grid.Row="2"
-              FonteSize="20"
+              FontSize="20"
               HorizontalOptions="Center"/>
        </Grid>
     </Frame> 
 
-    <Frame x:Name="vento"
+    <Frame 
            BackgroundColor="#F0F0F0"
-           Padding="15"
+           Padding="5"
            HeightRequest="70"
            CornerRadius="25"
            Grid.Column="2"
@@ -117,18 +117,18 @@
           </Grid.RowDefinitions>
        <Label x:Name="labelforça"
               Grid.Row="1"
-              FonteSize="20"
+              FontSize="20"
               HorizontalOptions="Center"/>
        <Label x:Name="labeldirecao"
               Grid.Row="2"
-              FonteSize="20"
+              FontSize="20"
               HorizontalOptions="Center"/>
        </Grid>
     </Frame> 
 
-    <Frame x:Name="lua"
+    <Frame 
            BackgroundColor="#F0F0F0"
-           Padding="15"
+           Padding="5"
            HeightRequest="70"
            CornerRadius="25"
            Grid.Column="2"
@@ -147,7 +147,7 @@
        <Label x:Name="labellua"
               Grid.Row="1"
               Grid.Column="0"
-              FonteSize="20"
+              FontSize="20"
               HorizontalOptions="Center"/>
       
               </Grid>
@@ -155,7 +155,7 @@
     
     <Frame x:Name="espaço"
            BackgroundColor="#F0F0F0"
-           Padding="15"
+           Padding="5"
            HeightRequest="125"
            CornerRadius="30"
            Grid.ColumnSpan="3"

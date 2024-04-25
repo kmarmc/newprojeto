@@ -4,20 +4,20 @@ namespace previsao;
 
 public partial class MainPage : ContentPage
 {
-	const string url="https://api.hgbrasil.com/weather7a18584f";
+	const string url="https://api.hgbrasil.com/weather?woeid=7a18584f";
 	Resposta resposta;
 	public MainPage()
 	{
 		InitializeComponent();
 		TestaClima();
 	}
-	async void AtualizaTempo()
+	async void TestaClima()
 	{
 		try
 		{
 			var navegador = new HttpClient();
 			var response = await navegador.GetAsync(url);
-			if (response.IsSucessStatusCode)
+			if (response.IsSuccessStatusCode)
 			{
 				var content = await response.Content.ReadAsStringAsync();
 				resposta = JsonSerializer.Deserialize<Resposta>(content);
@@ -26,7 +26,7 @@ public partial class MainPage : ContentPage
 		}
 		catch(Exception e)
 		{
-
+          System.Diagnostics.Debug.WriteLine(e);
 		}
 	}
 	void PreencherTela()
@@ -34,34 +34,28 @@ public partial class MainPage : ContentPage
 		labelgrau.Text=resposta.results.temp.ToString();
 		labelcidade.Text=resposta.results.city;
 		labelnuvem.Text=resposta.results.description;
-		Labelcondition_code.Text=resposta.results.condition_code;
-		Labelcurrently.Text=resposta.results.currently;
-		Labelimg_id.Text=resposta.results.img_id;
 		labelumidade.Text=resposta.results.humidity.ToString();
 		labelchuva.Text=resposta.results.rain.ToString();
 		labelamanhecer.Text=resposta.results.sunrise;
 		labelanoitecer.Text=resposta.results.sunset;
-		labelforça=resposta.results.wind_speedy;
-		labeldirecao=resposta.results.wind_direction.ToString();
-		Labelwind_cardinal=resposta.results.wind_cardinal;
-		labellua=resposta.results.moon_phase;
-		Labelcloudiness=resposta.results.cloudiness.ToString();
-
+		labelforça.Text=resposta.results.wind_speedy;
+		labeldirecao.Text=resposta.results.wind_direction.ToString();
+		labellua.Text=resposta.results.moon_phase;
 		
-		if (conclusão.currently == "dia")
+		if (resposta.results.currently == "dia")
 		{
-			if (conclusão.rain>= 8)
+			if (resposta.results.rain>= 8)
 			imgfundo.Source ="diachuva.jpg";
-			else if (conclusão.cloudiness>=8)
+			else if (resposta.results.cloudiness>=8)
 			imgfundo.Source ="nubladodia.jpg";
 			else
 			imgfundo.Source ="soldia.jpg";
 		}
 		else
 		{
-			if (conclusão.rain >= 8)
+			if (resposta.results.rain >= 8)
 			imgfundo.Source ="raios.jpg";
-			else if (conclusão.cloudiness>=8)
+			else if (resposta.results.cloudiness>=8)
 			imgfundo.Source ="nublado.jpg";
 			else
 			imgfundo.Source ="estrela.jpg";
