@@ -222,10 +222,10 @@
        <Label x:Name="labellua"
               Grid.Row="1"
               Grid.Column="1"
-              FontSize="10"
+              FontSize="8"
               HorizontalOptions="Center"/>
       
-              </Grid>
+       </Grid>
     </Frame> 
     
     <Frame x:Name="espaço"
@@ -236,16 +236,86 @@
            Grid.ColumnSpan="3"
            Grid.Row="3"
            VerticalOptions="End">
+       <CollectionView x:Name="listaForecast">
+       <CollectionView.ItemsLayout>
+       <LinearItemsLayout Orientation="Horizontal"
+                          ItemSpacing="10"/>
+       </CollectionView.ItemsLayout>
+       <CollectionView.ItemTemplate>
+       <DataTemplate>
+       <Frame BackgroundColor="#FFF"
+              BorderColor="#FFF"
+              WidthRequest="200"
+              CornerRadius="20">
+       <Grid>
+          <Grid.RowDefinitions>
+              <RowDefinition Height="15"/>
+              <RowDefinition Height="20"/>
+              <RowDefinition Height="15"/>
+              <RowDefinition Height="15"/>
+              <RowDefinition Height="*"/>
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*"/>
+              <ColumnDefinition Width="*"/>
+          </Grid.ColumnDefinitions>
 
 
-    </Frame> 
+       <Label Text="{Binding date}"
+              FontSize="12"
+              TextColor="#000"
+              HorizontalOptions="Center"
+              Grid.Row="0"
+              Grid.ColumnSpan="2"/>
+
+       <Label Text="{Binding weekday}"
+              FontSize="16"
+              TextColor="#000"
+              HorizontalOptions="Center"
+              Grid.Row="1"
+              Grid.ColumnSpan="2"/>
+
+       <Label Text="Min:"
+              FontSize="12"
+              TextColor="#000"
+              HorizontalOptions="Center"
+              Grid.Row="2"
+              Grid.ColumnSpan="0"/>
+
+       <Label Text="Max:"
+              FontSize="12"
+              TextColor="#000"
+              HorizontalOptions="Center"
+              Grid.Row="3"
+              Grid.ColumnSpan="0"/>
+
+       <Label Text="{Binding min, StringFormat='{0}°C'}" 
+              FontSize="14"
+              TextColor="#000"
+              HorizontalOptions="Center"
+              Grid.Row="2"
+              Grid.ColumnSpan="1"/>
+
+       <Label Text="{Binding max, StringFormat='{0}°C'}"
+              FontSize="14"
+              TextColor="#000"
+              HorizontalOptions="Center"
+              Grid.Row="3"
+              Grid.ColumnSpan="1"/>
+
+       <Image Source="{Binding condition}"
+              Aspect="Fill"
+              HeightRequest="50"
+              WidthRequest="50"
+              Grid.Row="3"
+              Grid.ColumnSpan="1"/>
 
 
-
-
-
-
-     </Grid>
-    </ContentPage>
-
-
+</Grid>
+</Frame>
+</DataTemplate>
+</CollectionView.ItemTemplate>
+</CollectionView>
+</Frame>
+</Grid>
+</ContentPage>

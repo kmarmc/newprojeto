@@ -31,6 +31,7 @@ public partial class MainPage : ContentPage
 	}
 	void PreencherTela()
 	{
+		listaForecast.ItemsSource=resposta.results.forecast;
 		labelgrau.Text=resposta.results.temp.ToString();
 		labelCidade.Text=resposta.results.city;
 		labelnuvem.Text=resposta.results.description;

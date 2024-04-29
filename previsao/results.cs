@@ -1,3 +1,5 @@
+using newprojeto;
+
 namespace previsao;
 
 public class Results
@@ -29,5 +31,6 @@ public class Results
 
    public string moon_phase {get; set;}
    public double cloudiness {get; set;}
+   public List<Forecast> forecast {get;set;}
   
 }
