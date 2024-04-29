@@ -32,7 +32,7 @@ public partial class MainPage : ContentPage
 	void PreencherTela()
 	{
 		labelgrau.Text=resposta.results.temp.ToString();
-		labelcidade.Text=resposta.results.city;
+		labelCidade.Text=resposta.results.city;
 		labelnuvem.Text=resposta.results.description;
 		labelumidade.Text=resposta.results.humidity.ToString();
 		labelchuva.Text=resposta.results.rain.ToString();
@@ -60,6 +60,22 @@ public partial class MainPage : ContentPage
 			else
 			imgfundo.Source ="estrela.jpg";
 		}
+		if (resposta.results.moon_phase=="new")
+		    labellua.Text="Nova";
+		else if (resposta.results.moon_phase=="full")
+		    labellua.Text="Cheia";
+		else if (resposta.results.moon_phase=="waning_gibbous")
+		    labellua.Text="Gibosa minguante";
+		else if (resposta.results.moon_phase=="waxing_crescent")
+		    labellua.Text="Lua crescente";	
+		else if (resposta.results.moon_phase=="first_quarter")
+		    labellua.Text="Quarta crescente";
+		else if (resposta.results.moon_phase=="waxing_gibbous")
+		    labellua.Text="Gibosa crescente";
+		else if (resposta.results.moon_phase=="last_quarter")
+		    labellua.Text="Quarto minguante";
+		else if (resposta.results.moon_phase=="waning_crescent")
+		    labellua.Text="Lua minguante";								
 	}
 }
 
